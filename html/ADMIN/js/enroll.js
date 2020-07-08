@@ -155,7 +155,7 @@ function enroll_donor() {
                                 blood_group : blood_group_s,
                                 address : address_s,
                                 district : district_s,
-                                area_set : area_set_s,
+                                area : area_set_s,
                                 mail : mail_s,
                                 contact : contact_s,
                                 pos_date : pos_date_s,
