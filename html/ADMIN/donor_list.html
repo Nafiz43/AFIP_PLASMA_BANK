@@ -254,7 +254,7 @@
 		
 		<div class="form-group col-md-3" id="inputl3">
 			<label >Blood Group:</label>
-			 <select id="area" class="mdb-select md-form form-control">
+			 <select id="input3" class="mdb-select md-form form-control">
 			 	<option value="" disabled selected>Choose your option</option>
 			    <option>A+</option>                               
 		        <option>A-</option>
@@ -283,8 +283,8 @@
 		</div>
 		<div class="form-group col-md-3" id="inputl9">
 			<label >District:</label>
-			 <select id="district" class="mdb-select md-form form-control">
-      <option value="" disabled selected>Choose your option</option>
+			 <select id="input9" onclick="set_area()" class="mdb-select md-form form-control">
+			 	<option></option>
          <option >Dhaka</option>
         <option >Bagerhat</option>
         <option >Bandarban</option>
@@ -354,7 +354,10 @@
 
 		<div class="form-group col-md-3" id="inputl10">
 			<label >Area:</label>
-			<input type="text" class="form-control" name="Area" id="input10">
+      <select type="text" class="form-control" name="Area" id="input10">
+        <option></option>
+        <option></option>
+      </select>
 		</div>
 
 		<div class="form-group col-md-3" id="inputl7">
@@ -391,10 +394,7 @@
 	<!-- Successfullt DONE Setting up the frame of the table -->
 
 	<script >
-		//ATTACHING LISTENERS TO THE DAYS BEFORE OPTIONS
-		searchBySerialNoRadaioButtonFunction();
-		addTableHeader("donorListTable",["REG","NAME","ADDRESS","BLOOD","CONTACT",
-			"DOB","MAIL","MED HISTORY","NEG DATE","POS DATE","LAST DONATION"]);
+
 	</script>
 </div>
 
