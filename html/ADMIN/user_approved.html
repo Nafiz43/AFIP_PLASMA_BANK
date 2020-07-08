@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Admin</title>
+     <link rel = "icon" type = "image/png" href = "images/mm.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </head>
+   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDPUMSic15uCh0OBuEZV1mZQV1D5TeyCxM",
+      authDomain: "plasmabankcmh.firebaseapp.com",
+      databaseURL: "https://plasmabankcmh.firebaseio.com",
+      projectId: "plasmabankcmh",
+      storageBucket: "plasmabankcmh.appspot.com",
+      messagingSenderId: "731185412340",
+      appId: "1:731185412340:web:d0c5e86030a24b5ffdc6a1"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+  </script>
+
+  	 <style>
+  	 	.body{
+  	 		background-color: #D1F0CD;
+  	 	}
+    .jumbotron{
+      background-color: #3B5998;
+      color: white
+    }
+  </style>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+				<!-- <img class="img-fluid" src="final.png" alt="..." class="img-thumbnail"> -->
+        <div class="container-fluid">
+
+          
+           <button type="button" id="sidebarCollapse"  class="btn btn-outline-success">
+              <i class="fa fa-bars fa-2x"></i> 
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+				<h3><b>AFIP</b></h3>
+        <ul class="list-unstyled components mb-5">
+          <li  class="active cl_hover_btn ">
+            <a href="Admin_Home.html"><span class="fa fa-home"></span> Home</a>
+          </li>
+
+
+         <li  class="active cl_hover_btn">
+         	<a href="enroll.html"><span class="fa fa-user-plus"></span> Enroll Donor</a>
+         </li>
+          <li  class="active cl_hover_btn ">
+         	<a href="donor_list.html"><span class="fa fa-list"></span> Donor List</a>
+         </li>
+          <li>
+         	
+         </li>
+          <li  class="active cl_hover_btn">
+         	<a href="stat.html"><span class="fa fa-bar-chart"></span> Statistics</a>
+         </li>
+
+
+
+             <li >
+             <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-medkit"></span> Patient</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu2">
+                <li class="active cl_hover_btn">
+                    <a href="patient_enroll.html">Enroll</a>
+                </li>
+                <li class="active cl_hover_btn">
+                    <a href="patient_update.html">Update</a>
+                </li>
+              
+              </ul>
+             </li>
+             
+          <li>
+             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-users"></span> User</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li class="active cl_hover_btn">
+                    <a href="user_req.html">Request</a>
+                </li>
+                <li class="active cl_hover_btn active_btn">
+                    <a href="user_approved.html">Approved</a>
+                </li>
+              
+              </ul>
+             </li>
+
+
+            
+
+          
+         
+        </ul>
+
+        <div class="footer">
+        	<p>
+					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Web Application is made by MIST CSE-17
+					</p>
+        </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-8">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            	<!-- Adding LOGO THERE -->
+            	<ul class="nav navbar-nav">
+
+                <li class="nav-item">
+                   <img class="img-fluid" src="images/mm.png" alt="Chania" width="70" height="70">
+                </li>
+
+                <li class="nav-item">
+                   <h3> &nbsp;<b>AFIP PLASMA BANK</b></h3>
+                </li>
+
+                
+                
+              
+              </ul>
+
+            <!-- Adding LOGO DONE -->
+
+              <ul class="nav navbar-nav navbar-right">
+
+               <ul class="nav navbar-nav navbar-right">
+                 <li class="nav-item">
+                   <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
+                    <a href="../../change_password.html"><h4><span class="fa fa-key">Password</h4></a>
+                </li>
+                 <li class="nav-item">
+                    <a href="acc_info.html"><h4><div id="kickoff1"> </div> </h4></a>
+                </li>
+
+                <li>
+                  <a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+        <div>
+        	<div class="jumbotron">
+        		<h2><center><b>Approved Users</b></center></h2>
+        		<!-- <h2 class="mb-4">Sidebar #07</h2> -->
+        	</div>
+
+      
+
+       <!-- 	start writing from there
+ -->
+ <div class="container-fluid">
+
+      <div id="alert_there"></div>
+      <div id="loader"></div>
+        <table id="table" class="table table-striped">
+<!--     <thead>
+      <tr>
+        <th>Serial</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>DOB</th>
+        <th>Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>07/07/2020</td>
+        <td><button>details</button> </td>
+      </tr>
+     
+    </tbody> -->
+  </table>
+    </div>
+
+
+
+
+        
+      </div>
+		</div>
+    <script src="js/user_approved.js"></script>
+    <script src="../../js/basic.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

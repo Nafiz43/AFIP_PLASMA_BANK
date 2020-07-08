@@ -1,0 +1,351 @@
+
+	 document.getElementById("detailed_content").style.visibility = "hidden";
+
+function attendance() {
+	// firebase.database().ref('Enrolled/CSE-17A/CSE-402').push({
+		   
+	//    		 ID:201714023,
+	   		 
+
+	// 	  }, function(error) {
+	// 	    if (error) {
+	// 	    	alert("failed to save data");
+	// 	    } else {
+	// 	    	alert("successfully saved data");
+	// 	    }
+	// 	  });
+
+	// firebase.database().ref('attendance/CSE-17A/CSE-402/Lt Col Nazrul Islam/11-03-2020/08:00-08:55/201714023').set({
+		   
+	//    		 p_status:1,
+	   		 
+
+	// 	  }, function(error) {
+	// 	    if (error) {
+	// 	    	alert("failed to save data");
+	// 	    } else {
+	// 	    	alert("successfully saved data");
+	// 	    }
+	// 	  });
+
+	
+
+	// firebase.database().ref('Enrolled/CSE-17A/CSE-460').push({
+		   
+	//    		 ID:201714023,
+	   		 
+
+	// 	  }, function(error) {
+	// 	    if (error) {
+	// 	    	alert("failed to save data");
+	// 	    } else {
+	// 	    	alert("successfully saved data");
+	// 	    }
+	// 	  });
+	var teacher=localStorage.getItem("value_username");
+	var flag=0;
+
+	var date=document.getElementById("date").value;
+
+	var course=document.getElementById("course");
+	var course_text=course.options[course.selectedIndex].text;
+
+	var slot=document.getElementById("slot");
+	var slot_text=slot.options[slot.selectedIndex].text;
+
+	var batch=document.getElementById("batch");
+	var batch_text=batch.options[batch.selectedIndex].text;
+
+    var basic_content=''
+    var final_content='';
+	var table_content='';
+	var content='';
+    content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+	 
+	if (date=='' && course_text=='Choose your option' && slot_text=='Choose your option' && batch_text=='Choose your option') {
+		document.getElementById("date").style.borderColor = "red";
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("slot").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(course_text=='Choose your option' && date=='' && batch_text=='Choose your option')
+	{
+		document.getElementById("date").style.borderColor = "red";
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(course_text=='Choose your option' && slot_text=='Choose your option' && batch_text=='Choose your option')
+	{
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("slot").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(slot_text=='Choose your option' && date=='' && batch_text=='Choose your option')
+	{
+		document.getElementById("date").style.borderColor = "red";
+		document.getElementById("slot").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(date=='' && course_text=='Choose your option')
+	{
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("date").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(slot_text=='Choose your option' && batch_text=='Choose your option')
+	{
+		document.getElementById("slot").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(course_text=='Choose your option' && batch_text=='Choose your option')
+	{
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(date=='')
+	{
+		document.getElementById("date").style.borderColor = "red";
+		content=content+'<strong>Select </strong>Date! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(course_text=='Choose your option')
+	{
+		document.getElementById("course").style.borderColor = "red";
+		content=content+'<strong>Select </strong>Course! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(slot_text=='Choose your option')
+	{
+		document.getElementById("slot").style.borderColor = "red";
+		content=content+'<strong>Select </strong>Slot! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(batch_text=='Choose your option')
+	{
+		document.getElementById("batch").style.borderColor = "red";
+		content=content+'<strong>Select </strong>Batch! </div> ';
+       document.getElementById("alert_there").innerHTML=content;
+	}
+	else
+	{
+		 
+		  //document.getElementById("present").innerHTML='<h4>60</h4>';
+		basic_content='';
+		basic_content=basic_content+'<table class="table table-striped" border="2">';
+		basic_content=basic_content+'<br>';
+		basic_content=basic_content+'<br>';
+		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<tr>';
+		basic_content=basic_content+'<th scope="col">Ser No.</th>';
+		basic_content=basic_content+'<th scope="col">Roll No.</th>';
+		basic_content=basic_content+'<th scope="col">Name</th>';
+		basic_content=basic_content+'<th scope="col">Present</th>';
+		basic_content=basic_content+'<th scope="col">Absent</th>';
+		//content=content+'<th scope="col">Excused</th>';
+		basic_content=basic_content+'  </tr>';
+		basic_content=basic_content+' </thead>';
+		basic_content=basic_content+'<tbody>';
+
+		var s_id;
+
+		var c=1;
+		var present_count=0;
+		var absent_count=0;
+		//alert(batch_text+course_text);
+
+		var rootRef = firebase.database().ref();
+	var urlRef = rootRef.child('Enrolled/'+batch_text+'/'+course_text);
+	urlRef.once("value", function(snapshot) {
+    snapshot.forEach(function(child) {
+
+    	
+    	var s_id=child.val().ID;
+    	//alert(s_id);
+
+    	var s_present;
+    	var s_absent;
+    	var s_name;
+
+    	
+
+    	//for getting the name
+
+    	firebase.database().ref('User/'+s_id).once('value').then(function(snapshot) {
+
+    		s_name=snapshot.val().username;
+  				
+		 // alert(s_name);
+		}, function(error) {
+		    if (error) {
+		    	
+		      //alert("coming there");
+		    } else {
+		    	
+		   
+		    }
+		  });
+    	//name fetched
+
+    	firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).once('value').then(function(snapshot) {
+  				if (snapshot.exists()) {
+  					
+					 
+				  	
+  				}
+  				else
+  				{
+  					firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).set({
+		   
+					    p_status : 0
+					    
+					  }, function(error) {
+					    if (error) {
+					    	
+					     //  // The write failed...
+					    } else {
+					    	
+					    }
+					  });
+  				}
+  				
+		     
+		  
+		});
+
+    	//check whether enlisted student is present or not
+    	
+		//content=content+'<th scope="row">1</th>';
+		//alert(batch_text+course_text+teacher+date+slot_text+s_id);
+		setTimeout(function(){
+
+
+ 
+    firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).once('value').then(function(snapshot) {
+  				if (snapshot.exists()) {
+  					//alert('hello');
+  					s_present = snapshot.val().p_status;
+  					s_absent=1- s_present;
+  					table_content=table_content+'<tr>';
+
+  					table_content=table_content+'<td>'+c+'</td>';
+  					c=c+1;
+  					table_content=table_content+'<td>'+s_id+'</td>';
+  					table_content=table_content+'<td>'+s_name+'</td>';
+  					table_content=table_content+'<td><div class="checkbox">';
+  					if (s_present==1) {
+  						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox" checked></label>';
+  						present_count=present_count+1;
+  					}
+  					else
+  					{
+  						table_content=table_content+'<label><input  id='+s_id+' onclick="radio(this.id)" type="checkbox"></label>';
+  						absent_count=absent_count+1;
+  					}
+  					
+					table_content=table_content+'</div>';
+					table_content=table_content+'</td>';
+					table_content=table_content+'<td><div class="checkbox">';
+					if (s_absent==1) {
+						s_id=s_id+550;
+						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox" checked></label>';
+						s_id=s_id-550;
+
+					}
+					else
+					{
+						s_id=s_id+550;
+						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox"></label>';
+						s_id=s_id-550;
+					}
+					
+					table_content=table_content+'</div>';
+					table_content=table_content+'</td>';
+					// content=content+'<td><div class="checkbox">';
+					// content=content+'<label><input type="checkbox" value=""></label>';
+					// content=content+'</div>';
+					// content=content+'</td>';
+					table_content=table_content+'</tr>';
+  					 
+				    // alert(s_id+s_name+" "+s_present);
+
+					 // alert(content);
+					 final_content=final_content+'</tbody>';
+					final_content=final_content+'</table>';
+					document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
+					final_content='';
+			    document.getElementById("present").innerHTML = '<h4>'+present_count+'</h4>';
+				document.getElementById("absent").innerHTML = '<h4>'+ absent_count +'</h4>';
+				document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/c)*100 )+'</h4>';
+				var content='';
+		    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+		 		content=content+'<strong>Data </strong>Found! </div> ';
+		        document.getElementById("alert_there").innerHTML=content;
+		        flag=1;
+					 
+				  	
+  				}
+  				else
+  				{
+  					var content='';
+		    	content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+		 		content=content+'<strong>Data not </strong>Found! </div> ';
+		        document.getElementById("alert_there").innerHTML=content;
+  				}
+  				
+		     
+		  
+		});//asas
+    }, 500);
+  
+  	
+  });
+});
+		
+		document.getElementById("detailed_content").style.visibility = "visible";
+		
+
+
+	}
+
+	//alert('Hello From attendance page ');
+	// body...
+	
+
+	
+}
+
+function radio(s_id) {
+	// alert(s_id);
+	// var p=s_id+550;
+ //   if (document.getElementById(s_id).checked) 
+	// {
+	// 	alert("checked");
+	// 	document.getElementById(s_id).checked=false;
+	// 	document.getElementById(p).checked=true;
+
+	// }
+	// else if (document.getElementById(p).checked) 
+	// 	{
+	// 		alert("not checked");
+	// 		document.getElementById(s_id).checked=true;
+	// 	document.getElementById(p.)2.checked=false;
+	// 	}
+	// 	else
+	// 	{
+	// 		alert("doesnt matter");
+	// 	}
+	// body...
+}

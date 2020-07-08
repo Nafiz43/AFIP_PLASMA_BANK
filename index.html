@@ -1,0 +1,171 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+	<title>Login</title>
+	 <link rel = "icon" type = "image/png" href = "images/mm.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+  <script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyDPUMSic15uCh0OBuEZV1mZQV1D5TeyCxM",
+	    authDomain: "plasmabankcmh.firebaseapp.com",
+	    databaseURL: "https://plasmabankcmh.firebaseio.com",
+	    projectId: "plasmabankcmh",
+	    storageBucket: "plasmabankcmh.appspot.com",
+	    messagingSenderId: "731185412340",
+	    appId: "1:731185412340:web:d0c5e86030a24b5ffdc6a1"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+
+
+	</script>
+	<script src="js/login.js"></script>
+	<script src="../html/STUDENT/js/eligibility.js"></script>
+	
+
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form">
+					 <!-- <center><img class="img-fluid" src="images/mm.png" alt="Chania" width="70" height="70"></center> -->
+					 
+					<span class="login100-form-title p-b-20">
+						AFIP PLASMA BANK
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100">Username</span>
+						<input id="userid" class="input100" type="text" name="username" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+
+						<span class="label-input100">Password</span>
+
+						<input id="password" class="input100" type="password" name="pass" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+						
+					</div>
+					<div class="flex-sb-m w-full p-b-48">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+
+					    <div>
+							<a href="forgot_password.html" class="txt3">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+				</form>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button id="login" class="login100-form-btn" onclick="check(this.form)">
+								Login
+							</button>
+						</div>
+					</div>
+                   <form>
+                   	
+                   	<div id="alert_there">
+                   		
+                   	</div>
+                   	<div id="loader"> </div>
+
+						
+
+					  
+					
+					<div class="txt1 text-center p-t-26 p-b-20">
+						<span>
+							Don't have an account?
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="sign_up.html" style="color:#4B8B3B;">
+							<b>SIGN UP</b>
+						</a>
+					</div>
+					<!-- <a href="../sign_up.html" >
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button id="login" class="login100-form-btn">
+								
+									Sign Up
+								
+								
+							</button>
+						</div>
+					</div>
+					</a> -->
+                    
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script src="js/login.js"></script>
+
+
+</body>
+</html>
