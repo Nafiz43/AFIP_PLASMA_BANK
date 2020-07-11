@@ -41,6 +41,16 @@ var load_content='';
                   {
                     var str = userid;
                     mail_s = str.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
+                    mail_s = mail_s.replace(".", "");
 
                      document.getElementById("loader").innerHTML=load_content;
                     firebase.database().ref('user/' + mail_s).once('value').then(function(snapshot) {
