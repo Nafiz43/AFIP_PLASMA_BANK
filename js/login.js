@@ -12,7 +12,7 @@ var load_content='';
                   var input = $('.validate-input .input100');
                   var userid=document.getElementById("userid").value;
                   var password=document.getElementById("password").value;
-                  localStorage.setItem("value",userid);
+                  
                 //  localStorage.setItem("value_username",username);
 
                   if (userid=='' && password=='') {
@@ -51,6 +51,7 @@ var load_content='';
                     mail_s = mail_s.replace(".", "");
                     mail_s = mail_s.replace(".", "");
                     mail_s = mail_s.replace(".", "");
+                    
 
                      document.getElementById("loader").innerHTML=load_content;
                     firebase.database().ref('user/' + mail_s).once('value').then(function(snapshot) {
@@ -63,6 +64,7 @@ var load_content='';
                       if (s_status=='approved') {
                                  if(s_userpass==password){
                                  {
+                                    localStorage.setItem("value",mail_s);
                                      localStorage.setItem("value_role",s_role);
                                      localStorage.setItem("value_username",s_username);
                                      window.location.replace("html/ADMIN/Admin_Home.html");
@@ -75,6 +77,12 @@ var load_content='';
                                 document.getElementById("loader").innerHTML='';
                               }
 
+                      }
+                      else
+                      {
+                                content=content+'Account is not yet verified by admin!! </div> ';
+                                document.getElementById("alert_there").innerHTML=content;
+                                document.getElementById("loader").innerHTML='';
                       }
 
                      

@@ -55,7 +55,10 @@ function recordDonationButtonFunction(){
 }
 
 function recordDonationAddButtonFunction(serialNo){
-	var donationDateInputValue=document.getElementById("donationDateInput").value;	
+	var donationDateInputValue=document.getElementById("donationDateInput").value;
+			donationDateInputValue=donationDateInputValue.replace("-","/");
+			donationDateInputValue=donationDateInputValue.replace("-","/");
+			donationDateInputValue=donationDateInputValue.replace("-","/");
 	console.log("THE DATE TO BE STORED IS "+donationDateInputValue+"SN:"+serialNo);
 	//Code for getting the number of donations
 	ref=firebase.database().ref("donor/"+serialNo+"/donationDates");	
@@ -64,11 +67,11 @@ function recordDonationAddButtonFunction(serialNo){
 		var donatioNumber=parseInt(numOfChildren)+1;
 		if(donationDateInputValue!=""){
 			ref2=firebase.database().ref("donor/"+serialNo+"/donationDates/"+donatioNumber);	
-			ref2.set(donationDateInput.value);	
+			ref2.set(donationDateInputValue);	
 
 			ref3=firebase.database().ref("donor/"+serialNo+"/last_donation_date/");	
-			ref3.set(donationDateInput.value);	
-
+			ref3.set(donationDateInputValue);	
+			alert("Information successfully saved");
 			location.reload();
 		}else{
 			window.alert("You need to insert a date");
@@ -255,7 +258,9 @@ function submitUpdateFunction(id){
 	
 	firebase.database().ref('donor/' +id+"/district").set(district);
 	firebase.database().ref('donor/' +id+"/area").set(area);
-	
+
+	alert("Information successfully saved");
+	location.reload();
 		
 
 

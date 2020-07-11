@@ -73,8 +73,20 @@ function check(form) {
 		if (c==0) {
 
 			document.getElementById("loader").innerHTML=load_content;
+
          	var str = mail_s;
+         	var original_mail = mail_s;
 			mail_s = str.replace(".", "");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
+			mail_s = mail_s.replace(".","");
   			firebase.database().ref('user/'+mail_s).once('value').then(function(snapshot) {
   				if (snapshot.exists()) {
   				content='<br>';
@@ -89,7 +101,7 @@ function check(form) {
 								name: name_s,
 								address: address_s,
 								contact: contact_s,
-								mail: mail_s,
+								mail: original_mail,
 								dob: dob_s,
 								password : password_s,
 								role: role_s,

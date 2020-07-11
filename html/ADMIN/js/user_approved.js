@@ -60,41 +60,18 @@ var basic_content=''
   });
 });
 
- // document.getElementById("loader").innerHTML=load_content;
- //  			firebase.database().ref('user').child().orderByChild("request_status").equalTo("pending").once('value').then(function(snapshot) {
-
- //  				if (snapshot.exists()) {
-  				
-
- //  				}
- //  				else
- //  				{
- //  					content='<br>';
-	//    				content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
-	//    				content=content+'<strong>No Pending </strong>request found! </div> ';
- //   				 	document.getElementById("alert_there").innerHTML=content;
- //  				}
-		     
-		  
-	// 	}, function(error) {
-	// 	    if (error) {
-	// 	    	alert("asasasas");
-	// 	    	content='<br>';
- //   				content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
- //   				content=content+'<strong>No data </strong>found! </div> ';
- //   				 document.getElementById("alert_there").innerHTML=content;
-	// 	      // The write failed...
-	// 	    } else {
-	// 	    	alert('asasas');
-	// 	    	content='<br>';
- //   				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
- //   				content=content+'<strong>Data </strong> found! </div> ';
- //   				 document.getElementById("alert_there").innerHTML=content;
-		   
-	// 	    }
-	// 	  });
 
 function process123(mail_s) {
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
+	mail_s=mail_s.replace(".","");
 	localStorage.setItem("user_approved",mail_s);
 	 window.location.replace("user_approved_details.html");
 	// body...

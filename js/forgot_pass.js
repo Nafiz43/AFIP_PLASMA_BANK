@@ -28,19 +28,31 @@ function check(form) {
 	   		
 	   		document.getElementById("loader").innerHTML=load_content;
 	   		var mail_s=userid.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+	   		mail_s=mail_s.replace(".","");
+
 	   		firebase.database().ref('user/' + mail_s).once('value').then(function(snapshot) {
 
                      s_username = snapshot.val().username;
                       s_userpass = snapshot.val().userpass;
 		                {
-		                 var recovery=	Math.floor((Math.random() * 10000) + 1);
+		                 var recovery=	Math.floor((Math.random() * 100000) + 1);
 		               
 		                  m_body=m_body+"Hello "
 		                  m_body=m_body+s_username;
 					   	  m_body=m_body+"!! Your Recovery code is : ";
 					   	  m_body=m_body+recovery;
 					   	  localStorage.setItem("recovery_code",recovery);
-					   	  localStorage.setItem("recovery_mail",userid);
+					   	  localStorage.setItem("recovery_mail",mail_s);
 
 						Email.send({
 						Host: "smtp.gmail.com",
