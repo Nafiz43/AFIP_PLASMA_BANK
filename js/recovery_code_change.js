@@ -64,10 +64,6 @@ function check(form) {
 
 
 
-	   
-	   	
-	   	 
-
 	   }
 
 

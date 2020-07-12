@@ -1,9 +1,4 @@
-if (localStorage.getItem("value_role")== "Admin") {
-}
-else
-{
-  document.getElementById("user_list").style.visibility = "hidden";
-}
+
 var load_content='';    
     load_content=load_content+'<div class="form-horizontal">';
     load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
@@ -253,25 +248,6 @@ function patient_enroll() {
             }
           }); 
     }
-
-    
-
-
-
-    // alert(id_s+name_s+rank_s+unit_s+pos_date_s+blood_group_s+age_s+history_s+spo21_s+spo22_s+lung1_s+lung2_s+titar_s);
-    // alert(diabetes_s+asthma_s+hypertension_s+kidney_s+liver_s+lung_s+skin_s+heart_s+cns_s);
-
-
-
-    // if (id_s=='') {
-    //     content='<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
-    //     content=content+'Enter <strong>identification number </strong>! </div> ';
-    //     document.getElementById("alert_there").innerHTML=content;
-    // }
-    // else if()
-    // {
-
-    // }
 
 
 }

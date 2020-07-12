@@ -32,6 +32,13 @@
 
 
 	</script>
+    <script type="text/javascript">
+    if (localStorage.getItem("login_status")== "out") {
+
+  window.location.replace("../../index.html");
+}
+
+  </script>
   	 <style>
   	 	.body{
   	 		background-color: #D1F0CD;
@@ -93,6 +100,11 @@
              </li>
              
           <li id="user_list">
+             <script type="text/javascript">
+               if (localStorage.getItem("value_role")!= "Admin") {
+                        document.getElementById("user_list").style.visibility = "hidden";
+                      }
+             </script>  
              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-users"></span> User</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li class="active cl_hover_btn ">

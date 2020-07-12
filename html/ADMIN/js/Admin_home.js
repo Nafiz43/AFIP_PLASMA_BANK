@@ -1,6 +1,4 @@
 
-//alert('printing from js');
-//alert('hello');
 if (localStorage.getItem("value_role")== "Admin") {
 	document.getElementById("role").innerHTML="Admin Dashboard";
 	
@@ -17,7 +15,7 @@ else if (localStorage.getItem("value_role")== "Doctor")
 }
 
 
-var greetings='Hello ';
+var greetings='Welcome ';
 greetings=greetings+'<strong>'+localStorage.getItem("value_username")+'</strong>!'
 //var username = localStorage.getItem("value_username");
 var userid = '<span class="fa fa-user"></span>' +' '+ localStorage.getItem("value_username");

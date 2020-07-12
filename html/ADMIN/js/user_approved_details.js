@@ -1,9 +1,4 @@
-if (localStorage.getItem("value_role")== "Admin") {
-}
-else
-{
-  document.getElementById("user_list").style.visibility = "hidden";
-}
+
 
 var load_content='';	
 	load_content=load_content+'<div class="form-horizontal">';

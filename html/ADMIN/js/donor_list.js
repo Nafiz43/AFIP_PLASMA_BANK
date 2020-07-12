@@ -5,15 +5,6 @@
 
 
 
-if (localStorage.getItem("value_role")== "Admin") {
-}
-else
-{
-  document.getElementById("user_list").style.visibility = "hidden";
-}
-
-
-
 
 //This is the constant for controlling table size
 var tableRowLimit=10;

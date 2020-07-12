@@ -17,7 +17,7 @@ var basic_content=''
 	basic_content=basic_content+"<th>Serial</th>";
 	basic_content=basic_content+"<th>Name</th>";
 	basic_content=basic_content+"<th>E-mail</th>";
-	basic_content=basic_content+"<th>DOB</th>";
+	basic_content=basic_content+"<th>Role</th>";
 	basic_content=basic_content+"<th>Option</th>";
 	basic_content=basic_content+"</tr>";
 	basic_content=basic_content+"</thead>";
@@ -29,15 +29,13 @@ var basic_content=''
   var urlRef = rootRef.child('user');
   urlRef.once("value", function(snapshot) {
     snapshot.forEach(function(child) {
-    //m=child.val().App_ID;
-    //n=child.val().App_date;
     document.getElementById("loader").innerHTML='';
     if (child.val().request_status=="pending") {
       				table_content=table_content+"<tr>";
   					table_content=table_content+" <td>"+c+"</td>";
   					table_content=table_content+"<td>"+child.val().name+"</td>";
   					table_content=table_content+"<td>"+child.val().mail+"</td>";
-  					table_content=table_content+"<td>"+child.val().dob+"</td>";
+  					table_content=table_content+"<td>"+child.val().role+"</td>";
   					var a1=child.val().mail;
   					table_content=table_content+"<td><button id="+a1+" onClick='process123(this.id)'>details</button> </td>";
   					table_content=table_content+"</tr>";

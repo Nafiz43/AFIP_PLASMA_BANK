@@ -1,9 +1,4 @@
-if (localStorage.getItem("value_role")== "Admin") {
-}
-else
-{
-  document.getElementById("user_list").style.visibility = "hidden";
-}
+
 	  // document.getElementById("namep").style.visibility="hidden";
    //    document.getElementById("rankp").style.visibility="hidden";
    //    document.getElementById("unitp").style.visibility="hidden";

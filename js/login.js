@@ -1,4 +1,5 @@
-var load_content='';  
+localStorage.setItem("login_status","out");
+  var load_content='';  
   load_content=load_content+'<div class="form-horizontal">';
   load_content=load_content+'<div class="txt1 text-center p-t-26 p-b-20">';
   load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
@@ -67,6 +68,7 @@ var load_content='';
                                     localStorage.setItem("value",mail_s);
                                      localStorage.setItem("value_role",s_role);
                                      localStorage.setItem("value_username",s_username);
+                                     localStorage.setItem("login_status","in");
                                      window.location.replace("html/ADMIN/Admin_Home.html");
                                 }
 
@@ -94,17 +96,8 @@ var load_content='';
                     document.getElementById("loader").innerHTML='';
                 });
 
-
-
-
-
-
                   } 
-
-
-                  
-                  
-                    
+          
                   
             }
 

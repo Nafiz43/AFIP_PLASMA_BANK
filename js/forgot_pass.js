@@ -1,4 +1,4 @@
-   //document.getElementById("loader").disabled = true;
+
 
  var load_content='';
    load_content=load_content+'<div class="form-horizontal">';
@@ -80,18 +80,9 @@ function check(form) {
                 });
                   
 
-
-				
-
-	   		// window.close();
-              //  	window.open('forgot_password_confirm.html');
 	   			   	 
 
 	   }
-
-
-
-              
-                 
+               
                      
      }
